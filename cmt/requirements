@@ -1,0 +1,49 @@
+package wwwAnalysis
+
+author Karsten Koeneke <karsten.koeneke@cern.ch>
+
+## For Athena policies: it has to be the first use statement
+use AtlasPolicy                 AtlasPolicy-*
+
+use AtlasPyROOT                 AtlasPyROOT-*           External
+use AtlasROOT                   AtlasROOT-*             External
+use GaudiInterface              GaudiInterface-*        External
+use AthenaBaseComps             AthenaBaseComps-*       Control
+use EventKernel                 EventKernel-*           Event
+use ObjectSelectorCore          ObjectSelectorCore-*    PhysicsAnalysis/AnalysisCommon
+
+private
+use AthenaKernel                AthenaKernel-*          Control
+end_private
+
+
+## macros   
+apply_tag       ROOTBasicLibs
+apply_tag       ROOTMathLibs
+
+macro_append ROOT_linkopts " -lPyROOT"
+
+## declare the directories CMT should know about
+branches HTTAnalysis python share src Root
+
+
+# Create a named installed library
+library HTTAnalysisLib *.cxx ../Root/*.cxx
+apply_pattern named_installed_library library=wwwAnalysisLib
+
+
+## create a component library
+library HTTAnalysis *.cxx components/*.cxx
+macro_append wwwAnalysis_dependencies " wwwAnalysis_AnalysisLib"
+apply_pattern component_library
+
+## install our python modules
+apply_pattern declare_python_modules files="*.py"
+
+## install our job options files
+apply_pattern declare_joboptions files="*.py"
+
+
+## For reflex dictionary generation
+use AtlasReflex   AtlasReflex-*   External -no_auto_imports
+apply_pattern lcgdict dict=wwwAnalysis selectionfile=selection.xml headerfiles="..\/wwwAnalysis/wwwAnalysis_AnalysisDict.h"

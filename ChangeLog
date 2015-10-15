@@ -1,0 +1,69 @@
+2014-06-16 Alex Long <b.long@cern.ch>
+ * Uses packages, selection and weights described in https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/WWWMeasurement r63
+ * Output cutflows and weights listed under "Alex/Louis" on https://twiki.cern.ch/twiki/bin/view/AtlasProtected/WWW_Cutflows r11
+ * Frozen to tags/wwwAnalysis-00-00-18
+
+2014-04-15 Alex Long <b.long@cern.ch>
+ * Uses packages, selection and weights described in https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/WWWMeasurement r60
+ * Output cutflows and weights listed under "Alex/Louis" on https://twiki.cern.ch/twiki/bin/view/AtlasProtected/WWW_Cutflows r5
+ * Added reweighting of WZ and ZZ MC for 0 SFOS using ChargeMisIDTool (adds dependency)
+ * Frozen to tags/wwwAnalysis-00-00-17
+
+2014-02-18 Alex Long <b.long@cern.ch>
+ * Additional event selections for control regions and optimization
+
+2014-01-09 Alex Long <b.long@cern.ch>
+ * Added ability to use MET STVF in addition to just MET_Ref_Final
+ * Added HW Higgs event selectors
+
+2014-01-04 Alex Long <b.long@cern.ch>
+ * Add ability to use third muon chain.  Chosen via TMuonSelector.
+ * Updated to MuonMomentumCorrections-00-09-08. 
+ * Removed smearing of muons with |eta| > 2.7 to handle undefined region.
+ * Frozen to tag wwwAnalysis-00-00-10
+
+2014-01-02 Alex Long <b.long@cern.ch>
+ * Updated some tools to latest recommendations with no change in event
+ selection for
+ mc12_8TeV.167006.MadGraphPythia_AUET2BCTEQ6L1_WWWStar_lnulnulnu.merge.NTUP_SMWZ.e1447_s1499_s1504_r3658_r3549_p1328
+ sample:
+ * GoodRunsLists-00-01-03
+ * MuonEfficiencyCorrections-02-01-19
+ * TrigMuonEfficiency-00-02-42
+ * ApplyJetCalibration-00-03-20
+ * JetUncertainties-00-08-06
+ * egammaAnalysisUtils-00-04-57
+ * MissingETUtility-01-02-05
+ * ElectronPhotonSelectorTools-00-00-56
+ * egammaEvent-03-06-43
+ * PATCore-00-00-12
+ * CalibrationDataInterface-00-3-06
+
+
+2013-12-31 13:40(EST) Alex Long <b.long@cern.ch>
+ * Fix XSecTool to use #events before filtering on skimmed samples
+ * Frozen to tags/wwwAnalysis-00-00-08
+
+2013-12-02 Alex Long <b.long@cern.ch>
+ * Achieve cutflow convergence with Andrea
+ * Update to egammaAnalysisUtils-00-04-55
+ * Fix electron energy correction to data via:
+ https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/EGammaCalibrationGEO20#Either_nominal_corrections_on_da
+ * Use Jet Energy scale corrections
+ * Use track information from electron when testing jet overlap
+ * Frozen to tags/wwwAnalysis-00-00-07
+
+
+2013-10-23 Alex Long <b.long@cern.ch>
+ * Event and Object Selection further modified to allow comparison to other group.
+ * Full agreement on cutflows with Ruiqi.
+ * Frozen to tags/wwwAnalysis-00-00-05
+
+2013-09-16 Alex Long <b.long@cern.ch>
+ * Event and Object Selection further modified to allow comparison to other group.
+ * Selection numbers and cut implementation reflected in description 
+   for WWW twiki in version r16: 
+   https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/WWWMeasurement
+ * Frozen to tags/wwwAnalysis-00-00-02
+
+
